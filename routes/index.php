@@ -18,7 +18,7 @@ $app->post('/loja', StoreController::class . ':insertLoja');
 $app->put('/loja', StoreController::class . ':updateLoja');
 $app->delete('/loja', StoreController::class . ':deleteLoja');
 // rota de produto
-$app->get('/produto', ProductController::class . ':getProdutos');
+$app->get('/produto', ProductController::class . ':getProducts');
 $app->post('/produto', ProductController::class . ':insertProduto');
 $app->put('/produto', ProductController::class . ':updateProduto');
 $app->delete('/produto', ProductController::class . ':deleteProduto');

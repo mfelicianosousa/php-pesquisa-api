@@ -10,20 +10,19 @@ use App\Dao\MySQL\mfsdevsystemManagerStore\ProductDao;
 
 final class ProductController
 {
-    public function getProdutos(Request $request, Response $response, array $args): Response
+    public function getProducts(Request $request, Response $response, array $args): Response
     {
        
-        //$storeDao = new StoreDao();
-        //$storeDao->testDB();  
-     
-       
+        $productsDao = new ProductDao();
+        $products =$productsDao->getAllProducts();
 
-        $response = $response->withJson([
-            "message" => "Hello Produtos!"
-        ]);
+
+        $response = $response->withJson($products);
+        
         return $response;
 
     }
+
 
     public function getById(Request $request, Response $response, array $args): Response
     {
