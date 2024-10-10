@@ -14,37 +14,6 @@ use DateTime;
  */
 final class PesquisaModel
 {
-  
-    /**
-     * Método construtor
-     * Inicializa a data de criação e atualização
-     */
-    public function __construct()
-    {
-        $this->created_at = new DateTime();
-        $this->updated_at = new DateTime();
-    }
-
-    /**
-     *  Atributos de auditoria
-     * 
-     */
-    
-    /**
-    * @var bool Indica se o registro foi excluído logicamente
-    */
-    private bool $isDeleted = false;
-
-    /**
-     * @var DateTime Data de criação do registro
-     */
-    private DateTime $created_at;
-
-    /**
-     * @var DateTime Data da última atualização do registro
-     */
-    private DateTime $updated_at;
-    
     /**
      * Identificador
      *
@@ -78,13 +47,13 @@ final class PesquisaModel
      * Bandalarga Fornecedor varchar(100)
      * @var string
     */
-    private string $bandaLargaFornecedor ;
+    private ?string $bandaLargaFornecedor ;
     
     /**
     * Bandalarga velocidade  varchar(60)
     * @var string
     */
-    private string $bandaLargaVelocidade;
+    private ?string $bandaLargaVelocidade;
     
     /**
     * Bandalarga velocidade decimal(10,2)
@@ -106,13 +75,13 @@ final class PesquisaModel
     * linkDedicado Fornecedor varchar(100)
     * @var string
     */
-    private $linkDedicadoFornecedor ;
+    private ?string $linkDedicadoFornecedor ;
     
     /**
     * linkDedicado velocidade  varchar(60)
     * @var string
     */
-    private $linkDedicadoVelocidade;
+    private ?string $linkDedicadoVelocidade;
     
     /**
     * linkDedicado valor decimal(10,2)
@@ -140,19 +109,19 @@ final class PesquisaModel
     * Linha Fixa ? varchar(100)
     * @var string
     */
-    private string $linhaFixaFornecedor ;
+    private ?string $linhaFixaFornecedor ;
     
     /**
     * Linha Fixa velocidade  varchar(60)
     * @var string
     */
-    private string $linhaFixaVelocidade;
+    private ?string $linhaFixaVelocidade;
     
     /**
     * Linha Fixa Valor(10,2)
     * @var float
     */
-    private string $linhaFixaValor;
+    private float $linhaFixaValor;
     
     /**
     * 2.2 PABX?
@@ -165,13 +134,15 @@ final class PesquisaModel
     * Pabx Fornecedor ? varchar(100)
     * @var string
     */
-    private string $pabxFornecedor ;
+
+    private ?string $pabxFornecedor;
+
     
     /**
     * Pabx velocidade  varchar(60)
     * @var string
     */
-    private string $pabxVelocidade;
+    private ?string $pabxVelocidade;
     
     /**
     * pabx Valor(10,2)
@@ -201,13 +172,13 @@ final class PesquisaModel
     * Sdwan Fornecedor ? varchar(100)
     * @var string
     */
-    private string $sdwanFornecedor ;
+    private ?string $sdwanFornecedor ;
     
     /**
     * Sdwan velocidade  varchar(60)
     * @var string
     */
-    private string $sdwanVelocidade;
+    private ?string $sdwanVelocidade;
     
     /**
     * Sdwan Valor(10,2)
@@ -230,13 +201,13 @@ final class PesquisaModel
     *
     * @var string
     */
-    private string $gestaoTrafegoFornecedor ;
+    private ?string $gestaoTrafegoFornecedor ;
     
     /**
     * gestaoTrafegoVelocidade  varchar(60)
     * @var string
     */
-    private string $gestaoTrafegoVelocidade;
+    private ?string $gestaoTrafegoVelocidade;
     
     /**
     * gestaoTrafegoValor (10,2)
@@ -264,13 +235,13 @@ final class PesquisaModel
     * desktopFornecedor ? varchar(100)
     * @var string
     */
-    private string $desktopFornecedor ;
+    private ?string $desktopFornecedor ;
     
     /**
     * desktopVelocidade  varchar(60)
     * @var string
     */
-    private string $desktopVelocidade;
+    private ?string $desktopVelocidade;
     
     /**
     * desktopValor (10,2)
@@ -292,13 +263,13 @@ final class PesquisaModel
     * notebookFornecedor ? varchar(100)
     * @var string
     */
-    private string $notebookFornecedor ;
+    private ?string $notebookFornecedor ;
     
     /**
     * notebookVelocidade  varchar(60)
     * @var string
     */
-    private string $notebookVelocidade;
+    private ?string $notebookVelocidade;
     
     /**
     * desktopValor (10,2)
@@ -327,13 +298,13 @@ final class PesquisaModel
     * desktopFornecedor ? varchar(100)
     * @var string
     */
-    private string $office365Fornecedor ;
+    private ?string $office365Fornecedor ;
     
     /**
     * office365Velocidade  varchar(60)
     * @var string
     */
-    private string $office365Velocidade;
+    private ?string $office365Velocidade;
     
     /**
     * office365Valor (10,2)
@@ -355,13 +326,13 @@ final class PesquisaModel
     * googleWorkspaceFornecedor ? varchar(100)
     * @var string
     */
-    private string $googleWorkspaceFornecedor ;
+    private ?string $googleWorkspaceFornecedor ;
     
     /**
     * googleWorkspaceVelocidade  varchar(60)
     * @var string
     */
-    private string $googleWorkspaceVelocidade;
+    private ?string $googleWorkspaceVelocidade;
     
     /**
     * googleWorkspaceValor (10,2)
@@ -389,13 +360,13 @@ final class PesquisaModel
     * cloudFornecedor ? varchar(100)
     * @var string
     */
-    private string $cloudFornecedor ;
+    private ?string $cloudFornecedor ;
     
     /**
     * cloudVelocidade  varchar(60)
     * @var string
     */
-    private string $cloudVelocidade;
+    private ?string $cloudVelocidade;
     
     /**
     * cloudValor (10,2)
@@ -416,13 +387,13 @@ final class PesquisaModel
     * servidorFornecedor ? varchar(100)
     * @var string
     */
-    private string $servidorFornecedor ;
+    private ?string $servidorFornecedor ;
     
     /**
     * servidorVelocidade  varchar(60)
     * @var string
     */
-    private string $servidorVelocidade;
+    private ?string $servidorVelocidade;
     
     /**
     * servidorValor (10,2)
@@ -449,7 +420,7 @@ final class PesquisaModel
     * siteUrl ? varchar(100)
     * @var string
     */
-    private string $siteUrl;
+    private ?string $siteUrl;
     
     /*
      * 7.2 Instagram
@@ -465,7 +436,7 @@ final class PesquisaModel
     * instagramUrl ? varchar(100)
     * @var string
     */
-    private string $instagramUrl;
+    private ?string $instagramUrl;
     
     /*
      * 7.3 Linkedin
@@ -481,7 +452,7 @@ final class PesquisaModel
     * linkedinUrl ? varchar(100)
     * @var string
     */
-    private string $linkedinUrl;
+    private ?string $linkedinUrl;
 
      /****************************************************************
      * End Question 7.
@@ -502,17 +473,127 @@ final class PesquisaModel
     * nomeEspecialista ? varchar(50)
     * @var string
     */
-    private string $nomeEspecialista;
+    private ?string $nomeEspecialista;
 
     /**
     * dataAgendamento ? date
     * @var datetime
     */
-    private Datetime $dataAgendamento;
+    private ?DateTime $dataAgendamento;
+ 
    /****************************************************************
     * End Question 8.
     **************************************************************** */
+    /**
+     *  Atributos de auditoria
+     * 
+     */
+    
+    /**
+    * @var bool Indica se o registro foi excluído logicamente
+    */
+    private bool $isDeleted = false;
+
+    /**
+     * @var DateTime Data de criação do registro
+     */
+    private DateTime $created_at;
+
+    /**
+     * @var DateTime Data da última atualização do registro
+     */
+    private DateTime $updated_at;
      
+    /**
+     * Método construtor
+     * Inicializa a data de criação e atualização
+     */
+    public function __construct()
+    {
+        $this->id = 0;
+        $this->lojaId = 0;
+        $this->usuarioId = 0;
+
+        $this->hasBandaLarga = false;
+        $this->bandaLargaFornecedor = null;
+        $this->bandaLargaVelocidade = null;
+        $this->bandaLargaValor = 0.0;
+
+        $this->hasLinkDedicado = false;
+        $this->linkDedicadoFornecedor = null;
+        $this->linkDedicadoVelocidade = null;
+        $this->linkDedicadoValor = 0.0;
+
+        $this->hasLinhaFixa = false;
+        $this->linhaFixaFornecedor = null;
+        $this->linhaFixaVelocidade = null;
+        $this->linhaFixaValor = 0.0;
+
+        $this->hasPabx = false;
+        $this->pabxFornecedor = null;
+        $this->pabxVelocidade = null;
+        $this->pabxValor = 0.0;
+
+        $this->hasSdwan = false;
+        $this->sdwanFornecedor = null;
+        $this->sdwanVelocidade = null;
+        $this->sdwanValor = 0.0;
+
+        $this->hasGestaoTrafego = false;
+        $this->gestaoTrafegoFornecedor = null;
+        $this->gestaoTrafegoVelocidade = null;
+        $this->gestaoTrafegoValor = 0.0;
+
+        $this->hasDesktop = false;
+        $this->desktopFornecedor = null;
+        $this->desktopVelocidade = null;
+        $this->desktopValor = 0.0;
+
+        $this->hasNotebook = false;
+        $this->notebookFornecedor = null;
+        $this->notebookVelocidade = null;
+        $this->notebookValor = 0.0;
+
+        $this->hasOffice365 = false;
+        $this->office365Fornecedor = null;
+        $this->office365Velocidade = null;
+        $this->office365Valor = 0.0;
+
+        $this->hasGoogleWorkspace = false;
+        $this->googleWorkspaceFornecedor = null;
+        $this->googleWorkspaceVelocidade = null;
+        $this->googleWorkspaceValor = 0.0;
+
+        $this->hasCloud = false;
+        $this->cloudFornecedor = null;
+        $this->cloudVelocidade = null;
+        $this->cloudValor = 0.0;
+
+        $this->hasServidor = false;
+        $this->servidorFornecedor = null;
+        $this->servidorVelocidade = null;
+        $this->servidorValor = 0.0;
+
+        $this->hasSite = false;
+        $this->siteUrl = null;
+        $this->hasInstagram = false;
+        $this->instagramUrl = null;
+        $this->hasLinkedin = false;
+        $this->linkedinUrl = null;
+
+        $this->hasEspecialista = false;
+        $this->nomeEspecialista = null;
+ 
+        $this->dataAgendamento = null;
+
+        $this->valorTotal = 0.0;
+
+        // Inicialização dos atributos de auditoria
+        $this->isDeleted = false;
+
+        $this->created_at = new DateTime();
+        $this->updated_at = new DateTime();
+    }
      
     /**
     * ValorTotal
@@ -520,6 +601,27 @@ final class PesquisaModel
     */
     private float $valorTotal;
    
+/**
+     * Getter para ValorTotal
+     *
+     * @return float
+     */
+    public function getValorTotal(): float
+    {
+        return $this->valorTotal;
+    }
+
+    /**
+     * @param float $valorTotal
+     * @return PesquisaModel
+    */
+    public function setValorTotal(float $valorTotal): PesquisaModel
+    {
+        $this->valorTotal = $valorTotal;
+        return $this;
+    }
+
+
     /**
      * @return int
      */
@@ -540,9 +642,9 @@ final class PesquisaModel
     /**
      * @return int
      */
-    public function getLoja_id():int
+    public function getLojaId():int
     {
-        return $this->loja_id;
+        return $this->lojaId;
     }
 
     /**
@@ -593,9 +695,9 @@ final class PesquisaModel
     }
     // BandaLargaFornecedor
     /**
-     * @return string
+     * @return string | null
      */
-    public function getBandaLargaFornecedor(): string
+    public function getBandaLargaFornecedor(): ?string
     {
         return $this->bandaLargaFornecedor;
     }
@@ -610,9 +712,9 @@ final class PesquisaModel
     }
     // BandaLargaVelocidade
     /**
-     * @return string
+     * @return string | null
      */
-    public function getBandaLargaVelocidade(): string
+    public function getBandaLargaVelocidade(): ?string
     {
         return $this->bandaLargaVelocidade;
     }
@@ -642,16 +744,22 @@ final class PesquisaModel
         $this->bandaLargaValor = $bandaLargaValor;
         return $this;
     }
+    
+    
     // hasLinkDedicado
     /**
-    * @return bool
-    */
+     * Getter para hasLinkDedicado
+     *
+     * @return bool
+     */
     public function getHasLinkDedicado(): bool
     {
         return $this->hasLinkDedicado;
     }
-    // hasLinkDedicado
+
     /**
+     * Setter para hasLinkDedicado
+     *
      * @param bool $hasLinkDedicado
      * @return PesquisaModel
      */
@@ -660,15 +768,20 @@ final class PesquisaModel
         $this->hasLinkDedicado = $hasLinkDedicado;
         return $this;
     }
-    // linkDedicadoFornecedor
+
     /**
-     * @return string
+     * Getter para linkDedicadoFornecedor
+     *
+     * @return string | null
      */
-    public function getLinkDedicadoFornecedor(): string
+    public function getLinkDedicadoFornecedor(): ?string
     {
         return $this->linkDedicadoFornecedor;
     }
+
     /**
+     * Setter para linkDedicadoFornecedor
+     *
      * @param string $linkDedicadoFornecedor
      * @return PesquisaModel
      */
@@ -676,34 +789,43 @@ final class PesquisaModel
     {
         $this->linkDedicadoFornecedor = $linkDedicadoFornecedor;
         return $this;
-     }
-    //linkDedicadoVelocidade
+    }
+
     /**
-         * @return string
+     * Getter para linkDedicadoVelocidade
+     *
+     * @return string | null
      */
-    public function getLinkDedicadoVelocidade(): string
+    public function getLinkDedicadoVelocidade(): ?string 
     {
         return $this->linkDedicadoVelocidade;
     }
+
     /**
+     * Setter para linkDedicadoVelocidade
+     *
      * @param string $linkDedicadoVelocidade
      * @return PesquisaModel
      */
     public function setLinkDedicadoVelocidade(string $linkDedicadoVelocidade): PesquisaModel
     {
-        $this->linkDedicadoVelocidade= $linkDedicadoVelocidade;
+        $this->linkDedicadoVelocidade = $linkDedicadoVelocidade;
         return $this;
     }
 
-    // linkDedicadoValor
     /**
-    * @return float
-    */
+     * Getter para linkDedicadoValor
+     *
+     * @return float
+     */
     public function getLinkDedicadoValor(): float
     {
         return $this->linkDedicadoValor;
     }
+
     /**
+     * Setter para linkDedicadoValor
+     *
      * @param float $linkDedicadoValor
      * @return PesquisaModel
      */
@@ -712,9 +834,20 @@ final class PesquisaModel
         $this->linkDedicadoValor = $linkDedicadoValor;
         return $this;
     }
-
     // hasLinhaFixa
     /**
+     * Getter para hasLinhaFixa
+     *
+     * @return bool
+     */
+    public function getHasLinhaFixa(): bool
+    {
+        return $this->hasLinhaFixa;
+    }
+
+    /**
+     * Setter para hasLinhaFixa
+     *
      * @param bool $hasLinhaFixa
      * @return PesquisaModel
      */
@@ -723,15 +856,20 @@ final class PesquisaModel
         $this->hasLinhaFixa = $hasLinhaFixa;
         return $this;
     }
-    // linhaFixaFornecedor
- /**
-     * @return string
+
+    /**
+     * Getter para linhaFixaFornecedor
+     *
+     * @return string | null
      */
-    public function getLinhaFixaFornecedor(): string
+    public function getLinhaFixaFornecedor(): ?string
     {
         return $this->linhaFixaFornecedor;
     }
+
     /**
+     * Setter para linhaFixaFornecedor
+     *
      * @param string $linhaFixaFornecedor
      * @return PesquisaModel
      */
@@ -740,32 +878,42 @@ final class PesquisaModel
         $this->linhaFixaFornecedor = $linhaFixaFornecedor;
         return $this;
     }
-    // linhaFixaVelocidade
+
     /**
-         * @return string
+     * Getter para linhaFixaVelocidade
+     *
+     * @return string | null
      */
-    public function getLinhaFixaVelocidade(): string
+    public function getLinhaFixaVelocidade(): ?string
     {
         return $this->linhaFixaVelocidade;
     }
+
     /**
+     * Setter para linhaFixaVelocidade
+     *
      * @param string $linhaFixaVelocidade
      * @return PesquisaModel
      */
-    public function setlinhaFixaVelocidade(string $linhaFixaVelocidade): PesquisaModel
+    public function setLinhaFixaVelocidade(string $linhaFixaVelocidade): PesquisaModel
     {
-        $this->linhaFixaVelocidade= $linhaFixaVelocidade;
+        $this->linhaFixaVelocidade = $linhaFixaVelocidade;
         return $this;
     }
-    // linhaFixaValor decimal(10,2)
+
     /**
-    * @return float
-    */
+     * Getter para linhaFixaValor
+     *
+     * @return float
+     */
     public function getLinhaFixaValor(): float
     {
         return $this->linhaFixaValor;
     }
+
     /**
+     * Setter para linhaFixaValor
+     *
      * @param float $linhaFixaValor
      * @return PesquisaModel
      */
@@ -774,6 +922,7 @@ final class PesquisaModel
         $this->linhaFixaValor = $linhaFixaValor;
         return $this;
     }
+
     // Getter para hasPabx
     public function getHasPabx(): bool
     {
@@ -789,9 +938,9 @@ final class PesquisaModel
     /**
      * Getter para pabxFornecedor
      *
-     * @return string
+     * @return string | null
      */
-    public function getPabxFornecedor(): string
+    public function getPabxFornecedor(): ?string
     {
         return $this->pabxFornecedor;
     }
@@ -799,10 +948,10 @@ final class PesquisaModel
     /**
      * Setter para pabxFornecedor
      *
-     * @param string $pabxFornecedor
+     * @param string | null $pabxFornecedor
      * @return PesquisaModel
      */
-    public function setPabxFornecedor(string $pabxFornecedor): PesquisaModel
+    public function setPabxFornecedor(?string $pabxFornecedor): PesquisaModel
     {
         $this->pabxFornecedor = $pabxFornecedor;
         return $this;
@@ -811,9 +960,9 @@ final class PesquisaModel
     /**
      * Getter para pabxVelocidade
      *
-     * @return string
+     * @return string | null
      */
-    public function getPabxVelocidade(): string
+    public function getPabxVelocidade(): ? string
     {
         return $this->pabxVelocidade;
     }
@@ -821,10 +970,10 @@ final class PesquisaModel
     /**
      * Setter para pabxVelocidade
      *
-     * @param string $pabxVelocidade
+     * @param string | null $pabxVelocidade
      * @return PesquisaModel
      */
-    public function setPabxVelocidade(string $pabxVelocidade): PesquisaModel
+    public function setPabxVelocidade(?string $pabxVelocidade): PesquisaModel
     {
         $this->pabxVelocidade = $pabxVelocidade;
         return $this;
@@ -877,9 +1026,9 @@ final class PesquisaModel
     /**
      * Getter para sdwanFornecedor
      *
-     * @return string
+     * @return string | null
      */
-    public function getSdwanFornecedor(): string
+    public function getSdwanFornecedor(): ?string
     {
         return $this->sdwanFornecedor;
     }
@@ -887,10 +1036,10 @@ final class PesquisaModel
     /**
      * Setter para sdwanFornecedor
      *
-     * @param string $sdwanFornecedor
+     * @param string | null $sdwanFornecedor
      * @return PesquisaModel
      */
-    public function setSdwanFornecedor(string $sdwanFornecedor): PesquisaModel
+    public function setSdwanFornecedor(?string $sdwanFornecedor): PesquisaModel
     {
         $this->sdwanFornecedor = $sdwanFornecedor;
         return $this;
@@ -899,9 +1048,9 @@ final class PesquisaModel
     /**
      * Getter para sdwanVelocidade
      *
-     * @return string
+     * @return string | null
      */
-    public function getSdwanVelocidade(): string
+    public function getSdwanVelocidade(): ?string
     {
         return $this->sdwanVelocidade;
     }
@@ -909,10 +1058,10 @@ final class PesquisaModel
     /**
      * Setter para sdwanVelocidade
      *
-     * @param string $sdwanVelocidade
+     * @param string | null $sdwanVelocidade
      * @return PesquisaModel
      */
-    public function setSdwanVelocidade(string $sdwanVelocidade): PesquisaModel
+    public function setSdwanVelocidade(?string $sdwanVelocidade): PesquisaModel
     {
         $this->sdwanVelocidade = $sdwanVelocidade;
         return $this;
@@ -939,6 +1088,17 @@ final class PesquisaModel
         $this->sdwanValor = $sdwanValor;
         return $this;
     }
+
+/**
+    * Getter e Setter para hasGestaoTrafego
+    *
+    * @return bool
+    */
+    public function getHasGestaoTrafego(): bool
+    {
+        return $this->hasGestaoTrafego;
+    }
+
      /**
      * Setter para hasGestaoTrafego
      *
@@ -954,9 +1114,9 @@ final class PesquisaModel
     /**
      * Getter para gestaoTrafegoFornecedor
      *
-     * @return string
+     * @return string | null
      */
-    public function getGestaoTrafegoFornecedor(): string
+    public function getGestaoTrafegoFornecedor(): ?string
     {
         return $this->gestaoTrafegoFornecedor;
     }
@@ -964,10 +1124,10 @@ final class PesquisaModel
     /**
      * Setter para gestaoTrafegoFornecedor
      *
-     * @param string $gestaoTrafegoFornecedor
+     * @param string | null $gestaoTrafegoFornecedor
      * @return PesquisaModel
      */
-    public function setGestaoTrafegoFornecedor(string $gestaoTrafegoFornecedor): PesquisaModel
+    public function setGestaoTrafegoFornecedor(?string $gestaoTrafegoFornecedor): PesquisaModel
     {
         $this->gestaoTrafegoFornecedor = $gestaoTrafegoFornecedor;
         return $this;
@@ -976,9 +1136,9 @@ final class PesquisaModel
     /**
      * Getter para gestaoTrafegoVelocidade
      *
-     * @return string
+     * @return string | null
      */
-    public function getGestaoTrafegoVelocidade(): string
+    public function getGestaoTrafegoVelocidade(): ?string
     {
         return $this->gestaoTrafegoVelocidade;
     }
@@ -986,10 +1146,10 @@ final class PesquisaModel
     /**
      * Setter para gestaoTrafegoVelocidade
      *
-     * @param string $gestaoTrafegoVelocidade
+     * @param string | null $gestaoTrafegoVelocidade
      * @return PesquisaModel
      */
-    public function setGestaoTrafegoVelocidade(string $gestaoTrafegoVelocidade): PesquisaModel
+    public function setGestaoTrafegoVelocidade(?string $gestaoTrafegoVelocidade): PesquisaModel
     {
         $this->gestaoTrafegoVelocidade = $gestaoTrafegoVelocidade;
         return $this;
@@ -1036,14 +1196,14 @@ final class PesquisaModel
    /**
     * Getter e Setter para desktopFornecedor
     *
-    * @return string
+    * @return string | null
     */
-   public function getDesktopFornecedor(): string
+   public function getDesktopFornecedor(): ?string
    {
        return $this->desktopFornecedor;
    }
 
-   public function setDesktopFornecedor(string $desktopFornecedor): PesquisaModel
+   public function setDesktopFornecedor(?string $desktopFornecedor): PesquisaModel
    {
        $this->desktopFornecedor = $desktopFornecedor;
        return $this;
@@ -1052,14 +1212,14 @@ final class PesquisaModel
    /**
     * Getter e Setter para desktopVelocidade
     *
-    * @return string
+    * @return string | null
     */
-   public function getDesktopVelocidade(): string
+   public function getDesktopVelocidade(): ?string
    {
        return $this->desktopVelocidade;
    }
 
-   public function setDesktopVelocidade(string $desktopVelocidade): PesquisaModel
+   public function setDesktopVelocidade(?string $desktopVelocidade): PesquisaModel
    {
        $this->desktopVelocidade = $desktopVelocidade;
        return $this;
@@ -1100,14 +1260,14 @@ final class PesquisaModel
     /**
      * Getter e Setter para notebookFornecedor
      *
-     * @return string
+     * @return string | null
      */
-    public function getNotebookFornecedor(): string
+    public function getNotebookFornecedor(): ?string
     {
         return $this->notebookFornecedor;
     }
 
-    public function setNotebookFornecedor(string $notebookFornecedor): PesquisaModel
+    public function setNotebookFornecedor(?string $notebookFornecedor): PesquisaModel
     {
         $this->notebookFornecedor = $notebookFornecedor;
         return $this;
@@ -1116,14 +1276,14 @@ final class PesquisaModel
     /**
      * Getter e Setter para notebookVelocidade
      *
-     * @return string
+     * @return string | null
      */
-    public function getNotebookVelocidade(): string
+    public function getNotebookVelocidade(): ?string
     {
         return $this->notebookVelocidade;
     }
 
-    public function setNotebookVelocidade(string $notebookVelocidade): PesquisaModel
+    public function setNotebookVelocidade(?string $notebookVelocidade): PesquisaModel
     {
         $this->notebookVelocidade = $notebookVelocidade;
         return $this;
@@ -1164,14 +1324,14 @@ final class PesquisaModel
     /**
      * Getter e Setter para office365Fornecedor
      *
-     * @return string
+     * @return string | null
      */
-    public function getOffice365Fornecedor(): string
+    public function getOffice365Fornecedor(): ?string
     {
         return $this->office365Fornecedor;
     }
 
-    public function setOffice365Fornecedor(string $office365Fornecedor): PesquisaModel
+    public function setOffice365Fornecedor(?string $office365Fornecedor): PesquisaModel
     {
         $this->office365Fornecedor = $office365Fornecedor;
         return $this;
@@ -1180,14 +1340,14 @@ final class PesquisaModel
     /**
      * Getter e Setter para office365Velocidade
      *
-     * @return string
+     * @return string | null
      */
-    public function getOffice365Velocidade(): string
+    public function getOffice365Velocidade(): ?string
     {
         return $this->office365Velocidade;
     }
 
-    public function setOffice365Velocidade(string $office365Velocidade): PesquisaModel
+    public function setOffice365Velocidade(?string $office365Velocidade): PesquisaModel
     {
         $this->office365Velocidade = $office365Velocidade;
         return $this;
@@ -1233,9 +1393,9 @@ final class PesquisaModel
     /**
      * Getter para googleWorkspaceFornecedor
      *
-     * @return string
+     * @return string | null
      */
-    public function getGoogleWorkspaceFornecedor(): string
+    public function getGoogleWorkspaceFornecedor(): ?string
     {
         return $this->googleWorkspaceFornecedor;
     }
@@ -1243,10 +1403,10 @@ final class PesquisaModel
     /**
      * Setter para googleWorkspaceFornecedor
      *
-     * @param string $googleWorkspaceFornecedor
+     * @param string | null $googleWorkspaceFornecedor
      * @return PesquisaModel
      */
-    public function setGoogleWorkspaceFornecedor(string $googleWorkspaceFornecedor): PesquisaModel
+    public function setGoogleWorkspaceFornecedor(?string $googleWorkspaceFornecedor): PesquisaModel
     {
         $this->googleWorkspaceFornecedor = $googleWorkspaceFornecedor;
         return $this;
@@ -1255,9 +1415,9 @@ final class PesquisaModel
     /**
      * Getter para googleWorkspaceVelocidade
      *
-     * @return string
+     * @return string | null
      */
-    public function getGoogleWorkspaceVelocidade(): string
+    public function getGoogleWorkspaceVelocidade(): ?string
     {
         return $this->googleWorkspaceVelocidade;
     }
@@ -1265,10 +1425,10 @@ final class PesquisaModel
     /**
      * Setter para googleWorkspaceVelocidade
      *
-     * @param string $googleWorkspaceVelocidade
+     * @param string | null $googleWorkspaceVelocidade
      * @return PesquisaModel
      */
-    public function setGoogleWorkspaceVelocidade(string $googleWorkspaceVelocidade): PesquisaModel
+    public function setGoogleWorkspaceVelocidade(?string $googleWorkspaceVelocidade): PesquisaModel
     {
         $this->googleWorkspaceVelocidade = $googleWorkspaceVelocidade;
         return $this;
@@ -1321,9 +1481,9 @@ final class PesquisaModel
     /**
      * Getter para cloudFornecedor
      *
-     * @return string
+     * @return string | null
      */
-    public function getCloudFornecedor(): string
+    public function getCloudFornecedor(): ?string
     {
         return $this->cloudFornecedor;
     }
@@ -1331,10 +1491,10 @@ final class PesquisaModel
     /**
      * Setter para cloudFornecedor
      *
-     * @param string $cloudFornecedor
+     * @param string | null $cloudFornecedor
      * @return PesquisaModel
      */
-    public function setCloudFornecedor(string $cloudFornecedor): PesquisaModel
+    public function setCloudFornecedor(?string $cloudFornecedor): PesquisaModel
     {
         $this->cloudFornecedor = $cloudFornecedor;
         return $this;
@@ -1343,9 +1503,9 @@ final class PesquisaModel
     /**
      * Getter para cloudVelocidade
      *
-     * @return string
+     * @return string | null
      */
-    public function getCloudVelocidade(): string
+    public function getCloudVelocidade(): ?string
     {
         return $this->cloudVelocidade;
     }
@@ -1353,10 +1513,10 @@ final class PesquisaModel
     /**
      * Setter para cloudVelocidade
      *
-     * @param string $cloudVelocidade
+     * @param string | null $cloudVelocidade
      * @return PesquisaModel
      */
-    public function setCloudVelocidade(string $cloudVelocidade): PesquisaModel
+    public function setCloudVelocidade(?string $cloudVelocidade): PesquisaModel
     {
         $this->cloudVelocidade = $cloudVelocidade;
         return $this;
@@ -1408,9 +1568,9 @@ final class PesquisaModel
     /**
      * Getter para servidorFornecedor
      *
-     * @return string
+     * @return string | null
      */
-    public function getServidorFornecedor(): string
+    public function getServidorFornecedor(): ?string
     {
         return $this->servidorFornecedor;
     }
@@ -1418,10 +1578,10 @@ final class PesquisaModel
     /**
      * Setter para servidorFornecedor
      *
-     * @param string $servidorFornecedor
+     * @param string | null $servidorFornecedor
      * @return PesquisaModel
      */
-    public function setServidorFornecedor(string $servidorFornecedor): PesquisaModel
+    public function setServidorFornecedor(?string $servidorFornecedor): PesquisaModel
     {
         $this->servidorFornecedor = $servidorFornecedor;
         return $this;
@@ -1430,9 +1590,9 @@ final class PesquisaModel
     /**
      * Getter para servidorVelocidade
      *
-     * @return string
+     * @return string | null
      */
-    public function getServidorVelocidade(): string
+    public function getServidorVelocidade(): ?string
     {
         return $this->servidorVelocidade;
     }
@@ -1440,10 +1600,10 @@ final class PesquisaModel
     /**
      * Setter para servidorVelocidade
      *
-     * @param string $servidorVelocidade
+     * @param string | null $servidorVelocidade
      * @return PesquisaModel
      */
-    public function setServidorVelocidade(string $servidorVelocidade): PesquisaModel
+    public function setServidorVelocidade(?string $servidorVelocidade): PesquisaModel
     {
         $this->servidorVelocidade = $servidorVelocidade;
         return $this;
@@ -1495,9 +1655,9 @@ final class PesquisaModel
     /**
      * Getter para siteUrl
      *
-     * @return string
+     * @return string | null
      */
-    public function getSiteUrl(): string
+    public function getSiteUrl(): ?string
     {
         return $this->siteUrl;
     }
@@ -1505,10 +1665,10 @@ final class PesquisaModel
     /**
      * Setter para siteUrl
      *
-     * @param string $siteUrl
+     * @param string | null $siteUrl
      * @return PesquisaModel
      */
-    public function setSiteUrl(string $siteUrl): PesquisaModel
+    public function setSiteUrl(?string $siteUrl): PesquisaModel
     {
         $this->siteUrl = $siteUrl;
         return $this;
@@ -1539,9 +1699,9 @@ final class PesquisaModel
     /**
      * Getter para instagramUrl
      *
-     * @return string
+     * @return string | null
      */
-    public function getInstagramUrl(): string
+    public function getInstagramUrl(): ?string
     {
         return $this->instagramUrl;
     }
@@ -1549,10 +1709,10 @@ final class PesquisaModel
     /**
      * Setter para instagramUrl
      *
-     * @param string $instagramUrl
+     * @param string | null $instagramUrl
      * @return PesquisaModel
      */
-    public function setInstagramUrl(string $instagramUrl): PesquisaModel
+    public function setInstagramUrl(?string $instagramUrl): PesquisaModel
     {
         $this->instagramUrl = $instagramUrl;
         return $this;
@@ -1583,9 +1743,9 @@ final class PesquisaModel
     /**
      * Getter para linkedinUrl
      *
-     * @return string
+     * @return string | null
      */
-    public function getLinkedinUrl(): string
+    public function getLinkedinUrl(): ?string
     {
         return $this->linkedinUrl;
     }
@@ -1593,13 +1753,23 @@ final class PesquisaModel
     /**
      * Setter para linkedinUrl
      *
-     * @param string $linkedinUrl
+     * @param string | null $linkedinUrl
      * @return PesquisaModel
      */
-    public function setLinkedinUrl(string $linkedinUrl): PesquisaModel
+    public function setLinkedinUrl(?string $linkedinUrl): PesquisaModel
     {
         $this->linkedinUrl = $linkedinUrl;
         return $this;
+    }
+
+ /**
+     * Getter para hasEspecialista
+     *
+     * @return bool
+     */
+    public function getHasEspecialista(): bool
+    {
+        return $this->hasEspecialista;
     }
  /**
      * Setter para hasEspecialista
@@ -1616,9 +1786,9 @@ final class PesquisaModel
     /**
      * Getter para especialista
      *
-     * @return string
+     * @return string | null
      */
-    public function getEspecialista(): string
+    public function getEspecialista(): ?string
     {
         return $this->especialista;
     }
@@ -1626,36 +1796,49 @@ final class PesquisaModel
     /**
      * Setter para especialista
      *
-     * @param string $especialista
+     * @param string | null $especialista
      * @return PesquisaModel
      */
-    public function setEspecialista(string $especialista): PesquisaModel
+    public function setEspecialista(?string $especialista): PesquisaModel
     {
         $this->especialista = $especialista;
         return $this;
     }
 
-    /**
+   
+     /**
      * Getter para dataAgendamento
      *
-     * @return DateTime
+     * @return DateTime|null
      */
-    public function getDataAgendamento(): DateTime
+    public function getDataAgendamento(): ?DateTime
     {
         return $this->dataAgendamento;
     }
 
-    /**
-     * Setter para dataAgendamento
-     *
-     * @param DateTime $dataAgendamento
-     * @return PesquisaModel
-     */
-    public function setDataAgendamento(DateTime $dataAgendamento): PesquisaModel
+   
+  /**
+ * Setter para dataAgendamento
+ *
+ * @param DateTime|string|null $dataAgendamento
+ * @return PesquisaModel
+ */
+    public function setDataAgendamento($dataAgendamento): PesquisaModel
     {
-        $this->dataAgendamento = $dataAgendamento;
+        if (is_string($dataAgendamento)) {
+            try {
+                $this->dataAgendamento = new DateTime($dataAgendamento);
+            } catch (\Exception $e) {
+                throw new \InvalidArgumentException('Formato de data inválido para dataAgendamento.');
+            }
+        } elseif ($dataAgendamento instanceof DateTime || $dataAgendamento === null) {
+            $this->dataAgendamento = $dataAgendamento;
+        } else {
+            throw new \InvalidArgumentException('O dataAgendamento deve ser uma string, DateTime ou null.');
+        }
         return $this;
     }
+
 
     /** Auditoria */
     
@@ -1714,36 +1897,5 @@ final class PesquisaModel
        return $this;  
    }
 
-   /**
-     * Método para salvar ou atualizar um registro
-     * Garante que a data de criação seja mantida e a de atualização seja modificada
-     */
-    public function salvarRegistro(): void
-    {
-        
-        
-        // Sempre atualiza a data de modificação
-        $this->setUpdatedAt();
-
-        //todo lógica de salvar o registro no banco de dados
-
-        echo "Registro salvo com sucesso. Data de criação: " . $this->getCreatedAt()->format('Y-m-d H:i:s') . 
-            ". Última atualização: " . $this->getUpdatedAt()->format('Y-m-d H:i:s');
-    }
-
-    /**
-     * Método para exclusão lógica do registro
-     */
-    public function excluirRegistro(): void
-    {
-        $this->setIsDeleted(true); // Marca o registro como excluído
-        $this->setUpdatedAt(); // Atualiza a data de modificação
-
-        //todo  lógica de "exclusão" lógica no banco de dados
-
-        echo "Registro marcado como excluído.";
-    }
-
-    
 
 }
